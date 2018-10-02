@@ -47,9 +47,19 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		double u = getLeistung();
+		double i = getStrom();
+		System.out.println(u);
+//		if(u != null && i != null) {
+//		
+//		}
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+	public double pAusUundI(double u, double i) {
+		double p = u*i;
+		return p;
+	}
 	
 }
