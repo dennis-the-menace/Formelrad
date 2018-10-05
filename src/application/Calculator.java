@@ -50,7 +50,10 @@ public class Calculator {
 		if(leistung == 0) {
 			if(spannung != 0 && strom != 0) {
 				leistung = pAusUundI(spannung, strom);				
+			} else if(spannung != 0 && widerstand != 0) {
+				leistung = pAusUundR(spannung, strom);
 			}
+			
 		}
 	}
 	
@@ -59,6 +62,11 @@ public class Calculator {
 	
 	public double pAusUundI(double u, double i) {
 		double p = u*i;
+		return p;
+	}
+	
+	public double pAusUundR(double u, double r) {
+		double p = u * u / r;
 		return p;
 	}
 }
