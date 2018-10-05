@@ -47,9 +47,33 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		if(leistung == 0) {
+			if(spannung != 0 && strom != 0) {
+				leistung = pAusUundI(spannung, strom);				
+			} else if(spannung != 0 && widerstand != 0) {
+				leistung = pAusUundR(spannung, strom);
+			} else if(widerstand != 0 && strom != 0) {
+				leistung = pAusRundI(widerstand, strom);
+			}
+			
+		}
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
+	public double pAusUundI(double u, double i) {
+		double p = u*i;
+		return p;
+	}
+	
+	public double pAusUundR(double u, double r) {
+		double p = u * u / r;
+		return p;
+	}
+	
+	public double pAusRundI(double r, double i) {
+		double p = i * i * r;
+		return p;
+	}
 }
