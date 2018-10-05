@@ -80,11 +80,45 @@ public class Main extends Application {
 			root.getChildren().add(btnBerechnen);
 			
 			btnBerechnen.setOnAction(e -> {
-				Calculator myCalculator = new Calculator(
-						Double.parseDouble(txLeistung.getText()),
-						Double.parseDouble(txSpannung.getText()),
-						Double.parseDouble(txStrom.getText()),
-						Double.parseDouble(txWiderstand.getText()));
+				/*
+				 * Idee:
+				 * Jedes Textfeld zuerst auf leer prüfen.
+				 * Wenn nicht leer, dann parseen sonst
+				 * den Wert dann auf 0 setzen (MagicNumber???)
+				 * sodann Calculator aufrufen.
+				 * 
+				 */
+				double leistung, spannung, strom, widerstand;
+				String leistungText = txLeistung.getText();
+				String spannungsText = txSpannung.getText();
+				String stromText = txStrom.getText();
+				String widerstandText = txWiderstand.getText();
+				System.out.println(leistungText);
+				if(leistungText.equals("")) {
+					leistung = 0;
+				} else {
+					leistung = Double.parseDouble(leistungText);
+				} 
+				
+				if (spannungsText.equals("")) {
+					spannung = 0;
+				} else {
+					spannung = Double.parseDouble(spannungsText);
+				}
+				
+				if (stromText.equals("")) {
+					strom = 0;
+				} else {
+					strom = Double.parseDouble(stromText);
+				}
+				
+				if (widerstandText.equals("")) {
+					widerstand = 0;
+				} else {
+					widerstand = Double.parseDouble(widerstandText);
+				}
+				
+				Calculator myCalculator = new Calculator(leistung, spannung, strom, widerstand);
 				System.out.print("Vorher:  ");
 				System.out.println(myCalculator.toString());
 				myCalculator.calculate();
