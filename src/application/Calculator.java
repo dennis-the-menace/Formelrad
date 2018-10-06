@@ -62,6 +62,8 @@ public class Calculator {
 				strom = iAusPundU(leistung, spannung);
 			} else if(leistung != 0 && widerstand != 0) {
 				strom = iAusPundR(leistung, widerstand);
+			} else if(spannung != 0 && widerstand != 0) {
+				strom = iAusUundR(spannung, widerstand);
 			}
 		}
 	}
@@ -93,6 +95,11 @@ public class Calculator {
 	
 	public double iAusPundR(double p, double r) {
 		double i = Math.sqrt(p / r);
+		return i;
+	}
+	
+	public double iAusUundR(double u, double r) {
+		double i = u / r;
 		return i;
 	}
 }
