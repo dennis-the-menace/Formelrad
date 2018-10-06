@@ -55,13 +55,23 @@ public class Calculator {
 			} else if(widerstand != 0 && strom != 0) {
 				leistung = pAusRundI(widerstand, strom);
 			}
-			
+		}
+		
+		if(strom == 0) {
+			if(leistung != 0 && spannung != 0) {
+				strom = iAusPundU(leistung, spannung);
+			} else if(leistung != 0 && widerstand != 0) {
+				strom = iAusPundR(leistung, widerstand);
+			} else if(spannung != 0 && widerstand != 0) {
+				strom = iAusUundR(spannung, widerstand);
+			}
 		}
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
+	// Formeln für p (Leistung)
 	public double pAusUundI(double u, double i) {
 		double p = u*i;
 		return p;
@@ -75,5 +85,21 @@ public class Calculator {
 	public double pAusRundI(double r, double i) {
 		double p = i * i * r;
 		return p;
+	}
+	
+	// Formeln für i (Stromstärke)
+	public double iAusPundU(double p, double u) {
+		double i = p / u;
+		return i;
+	}
+	
+	public double iAusPundR(double p, double r) {
+		double i = Math.sqrt(p / r);
+		return i;
+	}
+	
+	public double iAusUundR(double u, double r) {
+		double i = u / r;
+		return i;
 	}
 }
