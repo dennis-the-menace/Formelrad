@@ -60,6 +60,8 @@ public class Calculator {
 		if(strom == 0) {
 			if(leistung != 0 && spannung != 0) {
 				strom = iAusPundU(leistung, spannung);
+			} else if(leistung != 0 && widerstand != 0) {
+				strom = iAusPundR(leistung, widerstand);
 			}
 		}
 	}
@@ -86,6 +88,11 @@ public class Calculator {
 	// Formeln für i (Stromstärke)
 	public double iAusPundU(double p, double u) {
 		double i = p / u;
+		return i;
+	}
+	
+	public double iAusPundR(double p, double r) {
+		double i = Math.sqrt(p / r);
 		return i;
 	}
 }
