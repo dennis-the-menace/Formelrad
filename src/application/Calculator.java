@@ -60,6 +60,8 @@ public class Calculator {
 		if(spannung == 0) {
 			if(leistung != 0 && strom != 0) {
 				spannung = uAusPUndI(leistung, strom);				
+			} else if(leistung != 0 && widerstand != 0) {
+				spannung = uAusPUndR(leistung, widerstand);				
 			}
 		}
 		
@@ -97,6 +99,11 @@ public class Calculator {
 	// Formeln für u (Spannung)
 	public double uAusPUndI(double p, double i) {
 		double u = p / i;
+		return u;
+	}
+	
+	public double uAusPUndR(double p, double r) {
+		double u = Math.sqrt(p * r);
 		return u;
 	}
 	
