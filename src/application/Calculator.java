@@ -1,5 +1,8 @@
 package application;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
@@ -47,6 +50,8 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		int inputFieldCounter = 0;
+		
 		if(leistung == 0) {
 			if(spannung != 0 && strom != 0) {
 				leistung = pAusUundI(spannung, strom);				
@@ -55,6 +60,8 @@ public class Calculator {
 			} else if(widerstand != 0 && strom != 0) {
 				leistung = pAusRundI(widerstand, strom);
 			}
+		} else {
+			inputFieldCounter++;
 		}
 		
 		if(spannung == 0) {
@@ -65,6 +72,8 @@ public class Calculator {
 			} else if(strom != 0 && widerstand != 0) {
 				spannung = uAusIUndR(strom, widerstand);				
 			}
+		} else {
+			inputFieldCounter++;
 		}
 		
 		if(strom == 0) {
@@ -75,6 +84,21 @@ public class Calculator {
 			} else if(spannung != 0 && widerstand != 0) {
 				strom = iAusUundR(spannung, widerstand);
 			}
+		} else {
+			inputFieldCounter++;
+		}
+		
+		// Nur vorübergehen, bis Florian das Feature für die Berechnung für Wiederstand einbaut.
+		if(widerstand != 0) {
+			inputFieldCounter++;
+		}
+		
+		if(inputFieldCounter > 2) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Information Dialog");
+			alert.setHeaderText("Schau, ein Informationsdialog");
+			alert.setContentText("Achtung, mehr als zwei InputFelder ausgefüllt, die Werte in den Inputfeldern könnten deshalb verfälscht sein. Bitte genau zwei Felder ausfüllen.");
+			alert.showAndWait();
 		}
 		
 	}
