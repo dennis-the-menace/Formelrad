@@ -1,5 +1,8 @@
 package application;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
@@ -91,7 +94,11 @@ public class Calculator {
 		}
 		
 		if(inputFieldCounter > 2) {
-			System.out.println("Achtung, mehr als zwei InputFelder ausgefüllt, die Werte in den Inputfeldern könnten deshalb verfälscht sein. Bitte genau zwei Felder ausfüllen.");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Information Dialog");
+			alert.setHeaderText("Schau, ein Informationsdialog");
+			alert.setContentText("Achtung, mehr als zwei InputFelder ausgefüllt, die Werte in den Inputfeldern könnten deshalb verfälscht sein. Bitte genau zwei Felder ausfüllen.");
+			alert.showAndWait();
 		}
 		
 	}
