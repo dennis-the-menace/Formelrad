@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -23,7 +25,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Pane root = new Pane();
-
 			// Creating an image
 			Image image = new Image(new FileInputStream("bin\\application\\formelradelektronik.gif"));
 			ImageView imageView = new ImageView(image);
@@ -79,7 +80,7 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
-			btnBerechnen.setOnAction(e -> {
+			btnBerechnen.setOnAction(e -> {			
 				/*
 				 * Idee:
 				 * Jedes Textfeld zuerst auf leer prüfen.
