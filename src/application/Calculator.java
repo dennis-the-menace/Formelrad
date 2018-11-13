@@ -161,4 +161,9 @@ public class Calculator {
 		return r;
 	}
 
+	public double rAusIundP(double i, double p) {
+		double r = p / i * i;
+		return r;
+	}
+
 }
