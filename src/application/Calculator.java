@@ -154,4 +154,11 @@ public class Calculator {
 		double i = u / r;
 		return i;
 	}
+
+	// Formeln fuer r (Widerstand)
+	public double rAusIundU(double i, double u) {
+		double r = u / i;
+		return r;
+	}
+
 }
