@@ -92,26 +92,36 @@ public class Main extends Application {
 				String spannungsText = txSpannung.getText();
 				String stromText = txStrom.getText();
 				String widerstandText = txWiderstand.getText();
+
+				txLeistung.setStyle("-fx-text-fill: black");
+				txSpannung.setStyle("-fx-text-fill: black");
+				txStrom.setStyle("-fx-text-fill: black");
+				txWiderstand.setStyle("-fx-text-fill: black");
+
 				System.out.println(leistungText);
 				if(leistungText.equals("")) {
+					txLeistung.setStyle("-fx-text-fill: red");
 					leistung = 0;
 				} else {
 					leistung = Double.parseDouble(leistungText);
 				} 
 				
 				if (spannungsText.equals("")) {
+					txSpannung.setStyle("-fx-text-fill: red");
 					spannung = 0;
 				} else {
 					spannung = Double.parseDouble(spannungsText);
 				}
 				
 				if (stromText.equals("")) {
+					txStrom.setStyle("-fx-text-fill: red");
 					strom = 0;
 				} else {
 					strom = Double.parseDouble(stromText);
 				}
 				
 				if (widerstandText.equals("")) {
+					txWiderstand.setStyle("-fx-text-fill: red");
 					widerstand = 0;
 				} else {
 					widerstand = Double.parseDouble(widerstandText);
