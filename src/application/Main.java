@@ -140,6 +140,26 @@ public class Main extends Application {
 				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 			});
 
+			Button btnZuruecksetzen = new Button();
+			btnZuruecksetzen.relocate(200, 445);
+			btnZuruecksetzen.setText("Zurücksetzen");
+			root.getChildren().add(btnZuruecksetzen);
+
+			btnZuruecksetzen.setOnAction(e -> {
+
+				// set color back to black
+				txLeistung.setStyle("-fx-text-fill: black");
+				txSpannung.setStyle("-fx-text-fill: black");
+				txStrom.setStyle("-fx-text-fill: black");
+				txWiderstand.setStyle("-fx-text-fill: black");
+
+				// reset value
+				txLeistung.setText("");
+				txSpannung.setText("");
+				txStrom.setText("");
+				txWiderstand.setText("");
+			});
+
 			Scene scene = new Scene(root, 330, 490);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
