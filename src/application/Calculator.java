@@ -115,64 +115,76 @@ public class Calculator {
 	// Formeln für p (Leistung)
 	public double pAusUundI(double u, double i) {
 		double p = u*i;
+		System.out.println("P aus U und I: " + p);
 		return p;
 	}
 	
 	public double pAusUundR(double u, double r) {
 		double p = u * u / r;
+		System.out.println("P aus U und R: " + p);
 		return p;
 	}
 	
 	public double pAusRundI(double r, double i) {
 		double p = i * i * r;
+		System.out.println("P aus R und I: " + p);
 		return p;
 	}
 	
 	// Formeln für u (Spannung)
 	public double uAusPUndI(double p, double i) {
 		double u = p / i;
+		System.out.println("U aus P und I: " + u);
 		return u;
 	}
 	
 	public double uAusPUndR(double p, double r) {
 		double u = Math.sqrt(p * r);
+		System.out.println("U aus P und R: " + u);
 		return u;
 	}
 	
 	public double uAusIUndR(double i, double r) {
 		double u = i * r;
+		System.out.println("U aus R und I: " + u);
 		return u;
 	}
 	
 	// Formeln für i (Stromstärke)
 	public double iAusPundU(double p, double u) {
 		double i = p / u;
+		System.out.println("I aus P und U: " + i);
 		return i;
 	}
 	
 	public double iAusPundR(double p, double r) {
 		double i = Math.sqrt(p / r);
+		System.out.println("I aus P und R: " + i);
 		return i;
 	}
 	
 	public double iAusUundR(double u, double r) {
 		double i = u / r;
+		System.out.println("I aus R und U: " + i);
 		return i;
 	}
 
 	// Formeln fuer r (Widerstand)
 	public double rAusIundU(double i, double u) {
 		double r = u / i;
+		System.out.println("R aus I und U: " + r);
 		return r;
 	}
 
 	public double rAusIundP(double i, double p) {
 		double r = p / i * i;
+		System.out.println("R aus P und I: " + r);
 		return r;
 	}
 
 	public double rAusUundP(double u, double p) {
 		double r = u * u / p;
+		System.out.println("R aus P und U: " + r);
 		return r;
 	}
 }
