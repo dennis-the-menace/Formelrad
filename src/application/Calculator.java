@@ -166,4 +166,8 @@ public class Calculator {
 		return r;
 	}
 
+	public double rAusUundP(double u, double p) {
+		double r = u * u / p;
+		return r;
+	}
 }
