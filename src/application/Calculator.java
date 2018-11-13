@@ -9,6 +9,7 @@ import javafx.scene.control.Alert.AlertType;
  * @version 13.09.2018
  */
 public class Calculator {
+	private int ConflictVariable2;
 	private double leistung;
 	private double spannung;
 	private double strom;
