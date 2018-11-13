@@ -89,10 +89,15 @@ public class Calculator {
 			inputFieldCounter++;
 		}
 		
-		// Nur vorübergehen, bis Florian das Feature für die Berechnung für Wiederstand einbaut.
-		if(widerstand != 0) {
+		if (widerstand == 0)
+			if (strom != 0 && spannung != 0)
+				widerstand = rAusIundU(strom, spannung);
+			else if (strom != 0 && leistung != 0)
+				widerstand = rAusIundP(strom, leistung);
+			else if (spannung != 0 && leistung != 0)
+				widerstand = rAusUundP(spannung, leistung);
+		else
 			inputFieldCounter++;
-		}
 		
 		if(inputFieldCounter > 2) {
 			Alert alert = new Alert(AlertType.INFORMATION);
